@@ -1,0 +1,32 @@
+import java.util.Scanner; 
+public class ArrayLH
+{
+   public static void main(String[] args)
+   {
+      final int NUM_EMPLOYEE_LH = 3; 
+      double[] hoursLH = new double[NUM_EMPLOYEE_LH]; 
+      int[] employeeIDLH = {5678459, 4520125, 7895122}; 
+      double[] wagesLH = new double[NUM_EMPLOYEE_LH];
+      double[] payRateLH = new double[NUM_EMPLOYEE_LH]; 
+
+      Scanner keyboardLH = new Scanner(System.in); 
+      for (int i = 0; i < NUM_EMPLOYEE_LH; i++) 
+      {
+    	  	System.out.println("Enter the hours of #" + employeeIDLH[i] + " employees.");
+
+    	  	hoursLH[i] = keyboardLH.nextDouble();
+
+    	  	System.out.println("Enter the pay rate of #" + employeeIDLH[i] + " employees.");
+
+    	  	payRateLH[i] = keyboardLH.nextDouble();
+
+    	  	wagesLH[i] = hoursLH[i] * payRateLH[i];
+      }
+      System.out.println("The hours and pay rates you entered are: ");
+      for (int i = 0; i < NUM_EMPLOYEE_LH; i++)
+      {
+         System.out.printf("The total wages for Employee #" + employeeIDLH[i] + 
+                      " is $%.2f\n", wagesLH[i]);
+      }
+   }
+}
