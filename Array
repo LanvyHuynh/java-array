@@ -1,0 +1,49 @@
+import java.util.Scanner; //to allow keyboard entry
+
+/*
+ * This program shows an array being processed with loops.
+ */
+
+public class ArrayDemo
+{
+   public static void main(String[] args)
+   {
+      final int NUM_STUDENTS = 3; // Number of students to be processed & change how many students; make sure to change the CIN as well
+      
+      // Create an array to hold student scores.
+      
+      double[] score = new double[NUM_STUDENTS]; // declare without initial values; also it was [3] before but changed it because it's better/easier with NUM_STUDENTS
+      int[] cinNumber = {7551, 8142, 1373}; // declare with initial values 
+      double totalScores = 0; // to keep track of total scores
+   
+      Scanner keyboard = new Scanner(System.in); // Create a Scanner object for keyboard input.
+
+      System.out.println("Enter the scores of  "
+                   + NUM_STUDENTS + " students.");
+
+      // Cycle through the array, getting each student's scores.
+      
+      for (int i = 0; i < NUM_STUDENTS; i++)
+      {
+         System.out.printf("Student " + cinNumber[i] + " score: ");
+         
+         score[i] = keyboard.nextDouble();
+         
+         totalScores = totalScores + score[i]; // total of students' scores       
+      }
+
+      // Cycle through the array displaying each element.
+      
+      System.out.println("The scores you entered are:");
+      
+      for (int i = 0; i < NUM_STUDENTS; i++)
+         {
+    	  	System.out.printf("Student #" + cinNumber[i] + 
+    	  			" Score: %.2f\n", score[i]);  	  	
+         }
+      
+      System.out.printf("The average score is: %.2f",  (totalScores / NUM_STUDENTS));  // display average score
+      
+   }
+}
+
